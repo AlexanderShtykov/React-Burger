@@ -19,6 +19,7 @@ class App extends React.Component {
 
   loadSampleBurgers = () => {
     this.setState({ burgers: sampleBurgers });
+    console.log(this.state);
   };
 
   addToOrder = (key) => {
@@ -45,7 +46,7 @@ class App extends React.Component {
             })}
           </ul>
         </div>
-        <Order />
+        <Order burgers={this.state.burgers} order={this.state.order} />
         <MenuAdmin
           addBurger={this.addBurger}
           loadSampleBurgers={this.loadSampleBurgers}
